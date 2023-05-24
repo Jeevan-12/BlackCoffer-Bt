@@ -18,6 +18,7 @@ const getdata = async (req, resp) => {
 //     resp.status(200).json({ messsage: 'datasend', data });
 //   } catch (e) {
 //     resp.status(400).json({ messsage: 'error' });
+//     npm;
 //   }
 // };
 
@@ -53,4 +54,4 @@ async function getinsert() {
   }
 }
 
-module.exports = { getdata, getinsert, test };
+module.exports = { getdata, getinsert };
