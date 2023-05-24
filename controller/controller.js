@@ -54,4 +54,4 @@ async function getinsert() {
   }
 }
 
-module.exports = { getdata, getinsert };
+module.exports = { getdata, getinsert, test };
