@@ -2,7 +2,7 @@ const connect = require('../db');
 
 const getdata = async (req, resp) => {
   try {
-    db = await connect();
+    let db = await connect();
     const data = await db.find({}).toArray();
     resp.status(200).json({ messsage: 'datasend', data });
   } catch (e) {
@@ -44,9 +44,9 @@ async function within(fn, res, duration) {
   }
 }
 
-async function getinsert() {
+async function getinsert(req, resp) {
   try {
-    db = await connect();
+    let db = await connect();
     const data = await db.find({}).toArray();
     resp.status(200).json({ messsage: 'datasend', data });
   } catch (e) {
