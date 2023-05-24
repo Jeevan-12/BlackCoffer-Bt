@@ -9,18 +9,19 @@ const getdata = async (req, resp) => {
     resp.status(400).json({ messsage: 'error' });
   }
 };
-const getinsert = async (req, resp) => {
-  try {
-    db = await connect();
-    const data = await db.find({}).toArray();
 
-    resp.status(200).json({ messsage: 'datasend', data });
-  } catch (e) {
-    resp.status(400).json({ messsage: 'error' });
-  }
-};
+// const getinsert = async (req, resp) => {
+//   try {
+//     db = await connect();
+//     const data = await db.find({}).toArray();
 
-module.exports = async (req, res) => {
+//     resp.status(200).json({ messsage: 'datasend', data });
+//   } catch (e) {
+//     resp.status(400).json({ messsage: 'error' });
+//   }
+// };
+
+const test = async (req, res) => {
   await within(getinsert, res, 7000);
 };
 
@@ -46,11 +47,10 @@ async function getinsert() {
   try {
     db = await connect();
     const data = await db.find({}).toArray();
-
     resp.status(200).json({ messsage: 'datasend', data });
   } catch (e) {
     resp.status(400).json({ messsage: 'error' });
   }
 }
 
-module.exports = { getdata, getinsert };
+module.exports = { getdata, getinsert, test };
