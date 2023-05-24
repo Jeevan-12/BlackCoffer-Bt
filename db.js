@@ -1,5 +1,7 @@
 const { MongoClient } = require('mongodb');
-const con = new MongoClient('mongodb://0.0.0.0:27017');
+const con = new MongoClient(
+  'mongodb+srv://root:root@cluster0.vwjv8cn.mongodb.net/'
+);
 const connect = async () => {
   const dbConnect = await con.connect();
   const db = await dbConnect.db('energy');
